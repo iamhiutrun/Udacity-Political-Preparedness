@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Political Preparedness</string>
-
+    <string name="upcoming_elections">Upcoming elections</string>
+    <string name="find_my_representatives">Find my representatives</string>
+    <string name="saved_elections">Saved elections</string>
+    <string name="use_my_location">Use My Location</string>
+    <string name="representative_search">Representative Search</string>
+    <string name="address_line_1">Address Line 1</string>
+    <string name="address_line_2">Address Line 2</string>
+    <string name="city">City</string>
+    <string name="vip_test_election">VIP Test Election</string>
+    <string name="follow_election">Follow Election</string>
+    <string name="unfollow_election">Unfollow Election</string>
+    <string name="voter_info_election_information">Election Information</string>
+    <string name="voting_location">&lt;a href="%s">Voting locations&lt;/a></string>
+    <string name="ballot_information">&lt;a href="%s">Ballot information&lt;/a></string>
+    <string name="voter_info_follow_election">Follow election</string>
+    <string name="voter_info_un_follow_election">Unfollow election</string>
+    <string name="correspondence_header">Correspondence Address:</string>
     <!-- TODO: Add necessary string values -->
+
+    <string name="error_getting_representative">Error getting representatives</string>
+    <string name="error_enter_address_line1">Enter Address Line 1</string>
+    <string name="error_enter_city">Enter city</string>
+    <string name="error_enter_state">Enter state</string>
+    <string name="error_enter_zip">Enter zip</string>
+    <string name="error_can_not_find_representative_for_location">Cannot find representatives at this location</string>
+    <string name="permission_denied_explanation">You need to grant location permission in order to select the location.</string>
+    <string name="my_representatives">My Representatives</string>
+    <string name="zip">Zip</string>
+    <string name="representative_no">%s from %s</string>
+    <string name="representative_fb">%s facebook page</string>
+    <string name="representative_twitter">%s twitted</string>
+    <string name="representative_www">%s web page</string>
+    <string name="error_location_permission_denied">Location permission denied</string>
 
 </resources>

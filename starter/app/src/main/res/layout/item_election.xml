@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="listener"
+            type="com.example.android.politicalpreparedness.election.adapter.ElectionListener" />
+        <variable
+            name="election"
+            type="com.example.android.politicalpreparedness.network.models.Election" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:contentDescription="@{election.name}"
+        android:onClick="@{()->listener.onClick(election)}"
+        android:padding="@dimen/padding_medium">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextHeaderStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{election.name}"
+            android:contentDescription="@{election.name}"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            formattedDate="@{election.electionDay}" />
+
+    </LinearLayout>
+</layout>

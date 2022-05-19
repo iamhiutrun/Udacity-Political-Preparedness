@@ -9,10 +9,39 @@
         tools:context="com.example.android.politicalpreparedness.MainActivity">
 
         <!-- TODO: Add image for home screen logo. -->
-
+        <ImageView
+            android:id="@+id/im_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ballot_logo"
+            app:layout_constraintBottom_toTopOf="@id/btn_upcoming_elections"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
         <!-- TODO: Add Button to navigate to upcoming elections. -->
-
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_upcoming_elections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/upcoming_elections"
+            android:backgroundTint="?colorPrimary"
+            android:contentDescription="@string/upcoming_elections"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            app:layout_constraintBottom_toTopOf="@+id/btn_find_my_representatives" />
         <!-- TODO: Add Button to navigate to representatives. -->
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/btn_find_my_representatives"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/find_my_representatives"
+            android:layout_marginHorizontal="@dimen/margin_medium"
+            android:backgroundTint="?colorPrimary"
+            android:contentDescription="@string/find_my_representatives"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

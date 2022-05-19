@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- TODO: Add node to connect Election ViewModel -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.android.politicalpreparedness.election.ElectionsViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,8 +16,52 @@
         tools:context="com.example.android.politicalpreparedness.MainActivity">
 
         <!-- TODO: Add Upcoming Election Recycler and Header -->
+        <TextView
+            android:id="@+id/tv_upcoming_header"
+            style="@style/ListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:text="@string/upcoming_elections"
+            android:contentDescription="@string/upcoming_elections"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_upcoming"
+            listData="@{viewModel.upcomingElections}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_upcoming_header" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
         <!-- TODO: Add Saved Election Recycler and Header -->
+        <TextView
+            android:id="@+id/tv_saved_header"
+            style="@style/ListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:text="@string/saved_elections"
+            android:contentDescription="@string/saved_elections"
+            app:layout_constraintTop_toBottomOf="@id/guideline" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_saved"
+            listData="@{viewModel.followedElections}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_saved_header" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

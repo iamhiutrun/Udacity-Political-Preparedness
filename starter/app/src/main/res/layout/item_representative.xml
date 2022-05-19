@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="representative"
+            type="com.example.android.politicalpreparedness.representative.model.Representative" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@{@string/representative_no(representative.official.name, representative.office.name)}"
+        android:padding="@dimen/padding_medium">
+
+        <ImageView
+            android:id="@+id/im_avatar"
+            profileImage="@{representative.official.photoUrl}"
+            android:layout_width="@dimen/avatar_width"
+            android:layout_height="@dimen/avatar_height"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_representative_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_representative_title"
+            tools:src="@drawable/ballot_logo" />
+
+        <TextView
+            android:id="@+id/tv_representative_title"
+            style="@style/TextHeaderStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/im_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{representative.office.name}"
+            android:contentDescription="@{representative.office.name}"
+            tools:text="President of The United States" />
+
+        <TextView
+            android:id="@+id/tv_representative_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            tools:text="Joseph R. Biden"
+            android:text="@{representative.official.name}"
+            android:contentDescription="@{representative.official.name}"
+            app:layout_constraintStart_toEndOf="@id/im_avatar"
+            app:layout_constraintTop_toBottomOf="@id/tv_representative_title" />
+
+        <TextView
+            android:id="@+id/tv_representative_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintTop_toBottomOf="@id/tv_representative_name"
+            app:layout_constraintStart_toEndOf="@id/im_avatar"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{representative.official.party}"
+            android:contentDescription="@{representative.official.party}"
+            tools:text="Democratic Party" />
+
+        <ImageView
+            android:id="@+id/ic_facebook"
+            android:layout_width="@dimen/social_width"
+            android:layout_height="@dimen/social_height"
+            android:src="@drawable/ic_facebook"
+            android:padding="@dimen/padding_small"
+            android:visibility="gone"
+            android:contentDescription="@{@string/representative_fb(representative.official.name)}"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toStartOf="@id/ic_twitter"
+            app:layout_constraintTop_toTopOf="@id/tv_representative_name"
+            app:layout_constraintBottom_toBottomOf="@id/tv_representative_type" />
+
+        <ImageView
+            android:id="@+id/ic_twitter"
+            android:layout_width="@dimen/social_width"
+            android:layout_height="@dimen/social_height"
+            android:padding="@dimen/padding_small"
+            android:contentDescription="@{@string/representative_twitter(representative.official.name)}"
+            android:src="@drawable/ic_twitter"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_representative_type"
+            app:layout_constraintEnd_toStartOf="@+id/ic_www"
+            app:layout_constraintTop_toTopOf="@id/tv_representative_name" />
+
+        <ImageView
+            android:id="@+id/ic_www"
+            android:layout_width="@dimen/social_width"
+            android:layout_height="@dimen/social_height"
+            android:padding="@dimen/padding_small"
+            android:src="@drawable/ic_www"
+            android:visibility="gone"
+            android:contentDescription="@{@string/representative_www(representative.official.name)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_representative_type"
+            app:layout_constraintTop_toTopOf="@+id/tv_representative_name"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

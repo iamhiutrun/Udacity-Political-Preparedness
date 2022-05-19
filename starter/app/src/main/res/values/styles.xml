@@ -7,8 +7,31 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/arima_madurai_medium</item>
     </style>
 
     <!-- TODO: Add necessary styles -->
+    <style name="ButtonStyle" parent="TextAppearance.AppCompat.Button">
+        <item name="fontFamily">@font/arima_madurai_bold</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ListHeader" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/arima_madurai_bold</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextHeaderStyle" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/arima_madurai_medium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="VoterInfoToolbarTextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@font/arima_madurai_medium</item>
+    </style>
 
 </resources>
